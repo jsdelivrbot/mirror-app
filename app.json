@@ -1,0 +1,8 @@
+{
+  "name": "Smart Mirror",
+  "description": "Mirror App",
+  "repository": "https://github.com/mithatcak/mirror-app",
+  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}
