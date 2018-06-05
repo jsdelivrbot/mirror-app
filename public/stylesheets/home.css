@@ -1,0 +1,80 @@
+
+html, body, div {
+    font-family: 'Muli', serif;
+    color : white;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.tempContainer {
+    display:flex;
+}
+
+.weatherContainer{
+    width:800px;
+}
+
+.newsContainer{
+    width:1400px;
+    margin-top: 40px;
+}
+
+.one {
+    width:40%;
+}
+
+.two{
+    flex-grow: 1;
+    margin-top: 10px;
+}
+
+.timeAndDateContainer{
+    float: right;
+    margin-top: 0px;
+
+}
+.textAlignRight{
+    text-align: right;
+}
+
+.alignRight{
+    float:right;
+}
+
+.alignLeft{
+    float:left;
+}
+
+h3{
+    font-size: 12em;
+    font-weight:100;
+    margin: 5px;
+}
+h1{
+    font-weight:100;
+    font-size: 3em;
+    vertical-align: text-top;
+}
+
+li{
+    font-size: 2em;
+    font-weight: 100;
+    list-style: none;
+}
+li:before{
+    content: '';
+    display: inline-block;
+    height:.5em;
+    width: .5em;
+    padding-right: 5px;
+    background-image: url('../images/White_dot.png');
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+
+
+.weather{
+    color: white;
+}
+
