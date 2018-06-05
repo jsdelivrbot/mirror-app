@@ -3,6 +3,7 @@ const path = require('path')
 const DarkSkyApi = require('dark-sky-api');
 const Geolocation = require('geo-loc-utils');
 const PORT = process.env.PORT || 5000
+const socketIO = require('socket.io');
 
 var myData;
 
@@ -14,12 +15,8 @@ var app = express()
   .listen(PORT, () => console.log(`Listening on ${PORT}`))
 
 
-var io = require('socket.io').listen(app);
-io.configure(function () {  
-  io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
-});
 
+const io = socketIO(app);
 
 //weather
 var temp;
