@@ -1,7 +1,7 @@
 $(function() {
 	// generate unique user id
 	var userId = Math.random().toString(16).substring(2,15);
-	var socket = io.connect("http://localhost:5000");
+	var socket = io.connect("https://secret-ocean-69014.herokuapp.com:5000");
 
 	var temp = document.getElementById("temp");
 	var summary = document.getElementById("weatherSummary");
