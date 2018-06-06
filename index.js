@@ -23,32 +23,40 @@ var temp;
 var summary;
 var icons = ["clear-day", "clear-night", "cloudy", "fog", "partly-cloudy-day", "partly-cloudy-night", "rain", "sleet", "snow", "wind"];
 var icon;
-
+var pos;
+var weather = new Object();
 
 // listen for incoming connections from client
 io.sockets.on('connection', function (socket) {
 
   // start listening for coords
   socket.on('send:coords', function (data) {
-    getWeather(data).then(result => DarkSkyApi.loadCurrent(result)
+    getLocation(data).then(result => DarkSkyApi.loadCurrent(result)
       .then(result => {
-        var weather = new Object();
+        console.log(result);
         weather.temp = parseInt(result["temperature"]) + "°";
         weather.summary = result["summary"];
         var d = new Date();
         var dayNight = d.getHours();
         weather.icon = result["icon"];
-        socket.emit('load:weather', weather);
+        DarkSkyApi.loadForecast(pos)
+          .then(result => {
+            console.log(result);
+            weather.summary = result["daily"]["summary"];
+            socket.emit('load:weather', weather);
+          })
+
       })
     );
   });
 });
 
-const getWeather = (data) => {
+const getLocation = (data) => {
   return new Promise((resolve, reject) => {
     var position = new Object();
     position.latitude = data.coords[0].lat;
     position.longitude = data.coords[0].lng;
+    pos = position;
     resolve(position);
   });
 };

@@ -16,8 +16,10 @@ html, body, div {
 }
 
 .newsContainer{
-    width:1400px;
-    margin-top: 40px;
+    width:1600px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .one {
