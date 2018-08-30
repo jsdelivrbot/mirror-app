@@ -7,6 +7,7 @@ $(function() {
 	var summary = document.getElementById("weatherSummary");
 	var icon = document.getElementById("icon");
 
+	var info = $("#infobox");
 	var icons = ["clear-day","clear-night","cloudy","fog","partly-cloudy-day","partly-cloudy-night","rain","sleet","snow","wind"];
 
 	var doc = $(document);
