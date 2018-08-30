@@ -45,9 +45,9 @@ $(function() {
 	// }
 
 	// function positionSuccess(position) {
-		var lat = position.coords.latitude;
-		var lng = position.coords.longitude;
-		var acr = position.coords.accuracy;
+		// var lat = position.coords.latitude;
+		// var lng = position.coords.longitude;
+		// var acr = position.coords.accuracy;
         
 		sentData = {
 			id: userId,
