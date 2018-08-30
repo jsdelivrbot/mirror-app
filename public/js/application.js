@@ -38,13 +38,13 @@ $(function() {
 	});
 
 	// check whether browser supports geolocation api
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(positionSuccess, positionError, { enableHighAccuracy: true });
-	} else {
-		$(".map").text("Your browser is out of fashion, there\'s no geolocation!");
-	}
+	// if (navigator.geolocation) {
+	// 	navigator.geolocation.getCurrentPosition(positionSuccess, positionError, { enableHighAccuracy: true });
+	// } else {
+	// 	$(".map").text("Your browser is out of fashion, there\'s no geolocation!");
+	// }
 
-	function positionSuccess(position) {
+	// function positionSuccess(position) {
 		var lat = position.coords.latitude;
 		var lng = position.coords.longitude;
 		var acr = position.coords.accuracy;
@@ -53,14 +53,14 @@ $(function() {
 			id: userId,
 			active: active,
 			coords: [{
-				lat: lat,
-				lng: lng,
-				acr: acr
+				lat: 38.7509,
+				lng: 77.4753,
+				acr: 100,
 			}]
 		}
 		socket.emit("send:coords", sentData);
 		
-	}
+	// }
 
 	doc.bind("mouseup mouseleave", function() {
 		active = false;
